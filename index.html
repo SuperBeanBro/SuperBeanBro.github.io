@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Showcase</title>
+    <style>
+        /* 1. Global Background Setup */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            line-height: 1.6;
+            
+            /* Background Image Properties */
+            background-image: linear-gradient(rgba(11, 14, 20, 0.8), rgba(11, 14, 20, 0.8)), 
+                              url('images/background.jpg'); 
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-color: #0b0e14; /* Fallback */
+        }
+
+        /* 2. Hero Section - Now transparent to show body background */
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* 3. The Video Gallery Container */
+        .video-grid {
+            display: flex;
+            flex-direction: column; /* Stack vertically */
+            align-items: center;    /* Center horizontally */
+            gap: 60px;              /* Space between the two video sections */
+            width: 100%;
+        }
+
+        .video-grid > div {
+            width: 100%;            /* Allows it to be responsive */
+            max-width: 850px;       /* Keeps the video from getting too wide on huge monitors */
+            text-align: center;     /* Centers the <h3> and <p> text above/below videos */
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            border: 2px solid #ff4655;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds depth */
+        }
+
+   
+        /* Responsive Fix for Mobile */
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2.5rem; }
+        }
+
+        .btn {
+            background: #ff4655;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff5e6a;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>TITAN FALLEN</h1>
+        <p>The highly anticipated sequel to the epic saga.</p>
+        <!-- <br>
+        <a href="#" class="btn">Pre-Order Now</a> -->
+    </section>
+
+    <div class="video-container">
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div>
+                <h3 style="margin-top:0;">Game Walkthrough</h3>
+                <video width="640" height="360" controls>
+                    <source src="videos/game-commentary.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- <br/> -->
+            <!-- Video 2 -->
+            <div>
+                <h3 style="margin-top:0;">Code Deep-Dive</h3>
+                <video width="640" height="360" controls>
+                    <source src="videos/code-commentary.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="font-size: 0.9rem; color: #ccc;">Watch 10 minutes of unedited exploration in the Dead Zone.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
